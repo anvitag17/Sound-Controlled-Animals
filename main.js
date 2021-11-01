@@ -7,9 +7,6 @@ function startClassification()
 function modelReady(){
   classifier.classify(gotResults);
 }
-var dog = 0;
-var cat = 0;
-
 function gotResults(error, results) {
   if (error) {
     console.error(error);
@@ -23,10 +20,8 @@ function gotResults(error, results) {
 
     if (results[0].label == "Barking") {
       img.src = 'bark.gif';
-      dog = dog+1;
     } else if (results[0].label == "Meowing") {
       img.src = 'meow.gif';
-      cat = cat + 1;
     } else{
       img.src = 'listen.gif';
     }
